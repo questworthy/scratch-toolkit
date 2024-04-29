@@ -16,7 +16,7 @@
 	<div class="relative">
 		<img loading="lazy" src={logo} alt="Quest Alliance Logo" class="m-2 h-16" />
 	</div>
-	<nav class="flex justify-center mx-2 my-8">
+	<nav class="flex justify-center mx-2">
 		{#each links as link}
 			{#if link === 'home'}
 				<a

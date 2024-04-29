@@ -11,7 +11,9 @@ export default {
 				darker: '#27272a',
 				dark: '#737373',
 				light: '#f9aa37',
-				lighter: '#FFFBF5'
+				lighter: '#FFFBF5',
+				primary: '#f9aa37',
+				highlight: '#4d97ff'
 			}
 		}
 	},
