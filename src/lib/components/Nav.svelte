@@ -9,7 +9,7 @@
 	let links = ['home', 'library', 'about'];
 
 	const style =
-		'm-2 p-2 capitalize no-underline font-semibold text-dark transition-all duration-100 ease-in';
+		'm-2 p-2 capitalize font-contrail no-underline font-semibold text-dark transition-all duration-100 ease-in';
 </script>
 
 <div class="md:mb-16 flex flex-wrap justify-between items-center">

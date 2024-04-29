@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				inter: "'Inter Variable', sans-serif"
+				inter: "'Inter Variable', sans-serif",
+				contrail: "'Contrail One', system-ui"
 			},
 			colors: {
 				darkest: '#29292c',
