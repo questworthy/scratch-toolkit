@@ -5,6 +5,13 @@ export default {
 		extend: {
 			fontFamily: {
 				inter: "'Inter Variable', sans-serif"
+			},
+			colors: {
+				darkest: '#29292c',
+				darker: '#27272a',
+				dark: '#737373',
+				light: '#f9aa37',
+				lighter: '#FFFBF5'
 			}
 		}
 	},
