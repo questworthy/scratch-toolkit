@@ -8,11 +8,11 @@ export default {
 				contrail: "'Contrail One', system-ui"
 			},
 			colors: {
-				darkest: '#29292c',
-				darker: '#27272a',
+				darkest: '#FFD0D0',
+				darker: '#3C5B6F',
 				dark: '#737373',
 				light: '#f9aa37',
-				lighter: '#FFFBF5',
+				lighter: '#DC6B19',
 				primary: '#f9aa37',
 				highlight: '#4d97ff'
 			}
