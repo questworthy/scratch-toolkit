@@ -1,5 +1,5 @@
 <script>
-	import logo from '$lib/assets/logo.svg';
+	import logo from '$lib/assets/scratch.svg';
 
 	// get current page url
 	import { page } from '$app/stores';
@@ -9,14 +9,14 @@
 	let links = ['home', 'library', 'about'];
 
 	const style =
-		'm-2 p-2 capitalize no-underline font-semibold text-dark transition-all duration-100 ease-in';
+		'm-2 p-2 capitalize font-contrail no-underline font-semibold text-dark transition-all duration-100 ease-in';
 </script>
 
 <div class="md:mb-16 flex flex-wrap justify-between items-center">
 	<div class="relative">
 		<img loading="lazy" src={logo} alt="Quest Alliance Logo" class="m-2 h-16" />
 	</div>
-	<nav class="flex justify-center mx-2 my-8">
+	<nav class="flex justify-center mx-2">
 		{#each links as link}
 			{#if link === 'home'}
 				<a
