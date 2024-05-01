@@ -6,15 +6,17 @@
 	$: currentURL = $page.url.pathname.split('/').pop() || $page.url.pathname;
 
 	// nav bar
-	let links = ['home', 'library', 'about'];
+	let links = ['home', 'toolkits', 'about'];
 
 	const style =
 		'm-2 p-2 capitalize font-contrail no-underline font-semibold text-dark transition-all duration-100 ease-in';
 </script>
 
-<div class="md:mb-16 flex flex-wrap justify-between items-center">
+<div class="mb-16 flex flex-wrap justify-between items-center">
 	<div class="relative">
-		<img loading="lazy" src={logo} alt="Quest Alliance Logo" class="m-2 h-16" />
+		<a href="/">
+			<img loading="lazy" src={logo} alt="Quest Alliance Logo" class="m-2 h-16" />
+		</a>
 	</div>
 	<nav class="flex justify-center mx-2">
 		{#each links as link}
