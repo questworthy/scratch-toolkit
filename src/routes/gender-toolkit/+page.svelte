@@ -1,4 +1,24 @@
 <script>
+	import Accordian from '$lib/components/Accordian.svelte';
+
+	const colors = [
+		'#FFE0B5',
+		'#D9EDBF',
+		'#FF00FF',
+		'#00FFFF',
+		'#FFA500',
+		'#800080',
+		'#008000',
+		'#808000',
+		'#008080',
+		'#800000',
+		'#000080',
+		'#808080',
+		'#C0C0C0',
+		'#FFFFFF',
+		'#000000'
+	];
+
 	export let data;
 
 	let selectedTags = new Set();
@@ -38,20 +58,24 @@
 	</section>
 
 	<section class="text-neutral-400">
-		{#each filteredPosts as post}
-			<dt>
-				<a
-					href={post.path}
-					class=" text-xl text-neutral-500 underline hover:no-underline decoration-2 underline-offset-8"
-				>
-					{post.meta.title}
-				</a>
-			</dt>
-			<dd class="ml-8">{post.meta.desc}</dd>
-			<dd class="ml-8 text-xl font-bold text-right">{post.meta.author}</dd>
-			<dd class="ml-8 mt-0 pt-0 font-medium text-right">{post.meta.role}</dd>
-			<dd class="ml-8 mt-0 font-light text-right">{post.meta.date}</dd>
-			<hr />
+		{#each [...new Set(data.posts.flatMap((p) => p.meta.section))] as section, i (i)}
+			<Accordian entry={{ title: section, index: i + 1, color: colors[i] }}>
+				{#each filteredPosts as post}
+					{#if post.meta.section == section}
+						<div class="my-2 px-2 py-4">
+							<a
+								href={post.path}
+								class="underline hover:no-underline decoration-2 underline-offset-8"
+							>
+								<dt class="font-semibold font-contrail">
+									{post.meta.title}
+								</dt>
+							</a>
+							<dd class="text-neutral-800 font-light">{post.meta.desc}</dd>
+						</div>
+					{/if}
+				{/each}
+			</Accordian>
 		{/each}
 	</section>
 </div>
