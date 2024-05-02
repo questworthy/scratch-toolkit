@@ -1,6 +1,24 @@
 <script>
 	import Accordian from '$lib/components/Accordian.svelte';
 
+	const colors = [
+		'#FFE0B5',
+		'#D9EDBF',
+		'#FF00FF',
+		'#00FFFF',
+		'#FFA500',
+		'#800080',
+		'#008000',
+		'#808000',
+		'#008080',
+		'#800000',
+		'#000080',
+		'#808080',
+		'#C0C0C0',
+		'#FFFFFF',
+		'#000000'
+	];
+
 	export let data;
 
 	let selectedTags = new Set();
@@ -41,19 +59,21 @@
 
 	<section class="text-neutral-400">
 		{#each [...new Set(data.posts.flatMap((p) => p.meta.section))] as section, i (i)}
-			<Accordian entry={{ title: section, index: i + 1 }}>
+			<Accordian entry={{ title: section, index: i + 1, color: colors[i] }}>
 				{#each filteredPosts as post}
-					<div class="my-2 px-2 py-4 border-t-2 border-dashed border-neutral-400">
-						<dt>
+					{#if post.meta.section == section}
+						<div class="my-2 px-2 py-4">
 							<a
 								href={post.path}
-								class="text-xl underline hover:no-underline decoration-2 underline-offset-8"
+								class="underline hover:no-underline decoration-2 underline-offset-8"
 							>
-								{post.meta.title}
+								<dt class="font-semibold font-contrail">
+									{post.meta.title}
+								</dt>
 							</a>
-						</dt>
-						<dd class="">{post.meta.desc}</dd>
-					</div>
+							<dd class="text-neutral-800 font-light">{post.meta.desc}</dd>
+						</div>
+					{/if}
 				{/each}
 			</Accordian>
 		{/each}

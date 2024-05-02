@@ -4,13 +4,13 @@
 
 	const toolkits = [
 		{
-			name: 'Gender Toolkit',
+			name: 'Gender',
 			desc: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
 			path: 'gender-toolkit',
 			color: '#7ABA78'
 		},
 		{
-			name: 'Career Toolkit',
+			name: 'Career',
 			desc: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
 			path: 'career-toolkit',
 			color: '#CA8787'
