@@ -4,6 +4,7 @@ desc: Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum
 date: '2024-04-01'
 author: Richard Henricks
 role: CEO (Pied Pier)
+section: intro
 tags:
   - self
 published: true

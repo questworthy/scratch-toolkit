@@ -1,4 +1,6 @@
 <script>
+	import Accordian from '$lib/components/Accordian.svelte';
+
 	export let data;
 
 	let selectedTags = new Set();
@@ -38,20 +40,22 @@
 	</section>
 
 	<section class="text-neutral-400">
-		{#each filteredPosts as post}
-			<dt>
-				<a
-					href={post.path}
-					class=" text-xl text-neutral-500 underline hover:no-underline decoration-2 underline-offset-8"
-				>
-					{post.meta.title}
-				</a>
-			</dt>
-			<dd class="ml-8">{post.meta.desc}</dd>
-			<dd class="ml-8 text-xl font-bold text-right">{post.meta.author}</dd>
-			<dd class="ml-8 mt-0 pt-0 font-medium text-right">{post.meta.role}</dd>
-			<dd class="ml-8 mt-0 font-light text-right">{post.meta.date}</dd>
-			<hr />
+		{#each [...new Set(data.posts.flatMap((p) => p.meta.section))] as section, i (i)}
+			<Accordian entry={{ title: section, index: i + 1 }}>
+				{#each filteredPosts as post}
+					<div class="my-2 px-2 py-4 border-t-2 border-dashed border-neutral-400">
+						<dt>
+							<a
+								href={post.path}
+								class="text-xl underline hover:no-underline decoration-2 underline-offset-8"
+							>
+								{post.meta.title}
+							</a>
+						</dt>
+						<dd class="">{post.meta.desc}</dd>
+					</div>
+				{/each}
+			</Accordian>
 		{/each}
 	</section>
 </div>
